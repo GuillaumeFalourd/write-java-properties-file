@@ -12,7 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: echo "date=$(date)" >> $GITHUB_ENV
+      - name: Save date env variable
+        run: echo "date=$(date)" >> $GITHUB_ENV
+        shell: bash
       
       - name: Write simple value to test.properties file
         uses: GuillaumeFalourd/write-java-properties-file@main
@@ -32,4 +34,6 @@ jobs:
             first value
             second value
         
-      - run: cat ${{github.workspace}}/test/test.properties
+      - name: Show updated file
+        run: cat ${{github.workspace}}/test/test.properties
+        shell: bash

@@ -2,9 +2,9 @@
 
 <!-- markdownlint-disable MD013 -->
 [![Security Pipeline](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/security-pipeline.yml/badge.svg)](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/security-pipeline.yml) [![Super Linter](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/super-linter.yml/badge.svg)](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/super-linter.yml) [![Gitleaks](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/gitleaks.yml)
-<!-- markdownlint-disable MD013 -->
-
 <!-- markdownlint-enable MD013 -->
+
+<!-- markdownlint-disable MD013 -->
 [![Action test on Ubuntu](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/ubuntu_action_test.yml/badge.svg)](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/ubuntu_action_test.yml) [![Action test on MacOS](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/macos_action_test.yml/badge.svg)](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/macos_action_test.yml) [![Action test on Windows](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/windows_action_test.yml/badge.svg)](https://github.com/GuillaumeFalourd/write-java-properties-file/actions/workflows/windows_action_test.yml)
 <!-- markdownlint-enable MD013 -->
 
@@ -14,7 +14,7 @@
 
 ### Simple value
 
-```
+```yaml
 - name: Write simple value to application.properties file
   uses: GuillaumeFalourd/write-java-properties-file@v1
   with:
@@ -25,7 +25,7 @@
 
 ### Multiline values
 
-```
+```yaml
 - name: Write multiple values to application.properties file
   uses: GuillaumeFalourd/write-java-properties-file@v1
   with:
