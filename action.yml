@@ -1,0 +1,36 @@
+name: Write Java Properties file
+
+description: 'GitHub Action to write keys=values to a java properties file ☕️ :octocat:'
+
+branding:
+  icon: 'edit'
+  color: 'green'
+
+inputs:
+  file_path:
+    description: 'The path to the properties file.'
+    required: true
+  property:
+    description: 'The property keys to write. Accepts an array.'
+    required: true
+  value:
+    description: 'The property values to write (same order as the keys). Accepts an array.'
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - run: ${{ github.action_path }}/main.sh
+      if: runner.os != 'Windows'
+      shell: bash
+      env:
+        FILE_PATH: ${{ inputs.file_path }}
+        PROPERTY: ${{ inputs.property }}
+        VALUE: ${{ inputs.value }}
+    - run: bash main.sh
+      if: runner.os == 'Windows'
+      shell: bash
+      env:
+        FILE_PATH: ${{ inputs.file_path }}
+        PROPERTY: ${{ inputs.property }}
+        VALUE: ${{ inputs.value }}

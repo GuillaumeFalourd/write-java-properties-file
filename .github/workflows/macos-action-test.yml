@@ -1,0 +1,35 @@
+name: Action test on MacOS
+
+on:
+  schedule:
+    - cron: "0 4 * * MON-FRI" # Runs at 02:00 UTC
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: echo "date=$(date)" >> $GITHUB_ENV
+      
+      - name: Write simple value to test.properties file
+        uses: GuillaumeFalourd/write-java-properties-file@main
+        with:
+          file_path: ${{github.workspace}}/test/test.properties
+          property: date.key
+          value: ${{ env.date }}
+
+      - name: Write multiple values to test.properties file
+        uses: GuillaumeFalourd/write-java-properties-file@main
+        with:
+          file_path: ${{github.workspace}}/test/test.properties
+          property: |
+            first.property.key
+            second.property.key
+          value: |
+            first value
+            second value
+        
+      - run: cat ${{github.workspace}}/test/test.properties
