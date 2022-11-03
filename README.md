@@ -42,6 +42,12 @@ Field | Mandatory | Observation
 **property** | YES | Property / Properties keys to write.
 **value** | YES | Value(s) of the given property / properties, in the same order.
 
+## 🕵️ Troubleshooting
+
+- If the action is adding the first `key=value` at the same line as the last `key=value` present on the file, **add a new empty line to the file** before using the action.
+
+- The action currently **doesn't support** updating a key value (PR are welcome!).
+
 ## 🤝 Contributing
 
 ☞ If you're interested in contributing to this repository, please follow the [guidelines](https://github.com/GuillaumeFalourd/write-java-properties-file/blob/main/CONTRIBUTING.md)
