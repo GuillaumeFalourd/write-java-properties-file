@@ -46,7 +46,7 @@ Field | Mandatory | Observation
 
 - If the action is adding the first `key=value` at the same line as the last `key=value` present on the file, **add a new empty line to the file** before using the action.
 
-- The action currently **doesn't support** updating a key value (PR are welcome!).
+- The action currently **doesn't support** updating a key-value (PR are welcome!).
 
 ## 🤝 Contributing
 
