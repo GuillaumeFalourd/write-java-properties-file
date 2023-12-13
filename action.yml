@@ -27,7 +27,7 @@ runs:
         FILE_PATH: ${{ inputs.file_path }}
         PROPERTY: ${{ inputs.property }}
         VALUE: ${{ inputs.value }}
-    - run: bash main.sh
+    - run: bash ${{ github.action_path }}/main.sh
       if: runner.os == 'Windows'
       shell: bash
       env:
