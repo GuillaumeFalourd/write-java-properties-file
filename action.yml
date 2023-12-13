@@ -20,15 +20,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: ${{ github.action_path }}/main.sh
-      if: runner.os != 'Windows'
-      shell: bash
-      env:
-        FILE_PATH: ${{ inputs.file_path }}
-        PROPERTY: ${{ inputs.property }}
-        VALUE: ${{ inputs.value }}
-    - run: bash ${{ github.action_path }}/main.sh
-      if: runner.os == 'Windows'
+    - run: bash $GITHUB_ACTION_PATH/main.sh
       shell: bash
       env:
         FILE_PATH: ${{ inputs.file_path }}
